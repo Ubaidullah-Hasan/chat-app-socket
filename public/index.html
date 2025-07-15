@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <h1>iChat</h1>
+    <h1 class="title">iChat 💬</h1>
+    <div class="main">
+        <div class="name">
+            <span><i class="fa-solid fa-user-tie"></i></span>
+            <input type="text" class="name-input" maxlength="20" id="name-input" value="Anonymous">
+        </div>
+
+        <ul class="message-container" id="message-container">
+            <li class="message-left">
+                <p class="message">
+                    Lorem ipsum
+                    <span>blueird ● 26 july 10:40</span>
+                </p>
+            </li>
+
+            <li class="message-right">
+                <p class="message">
+                    Lorem ipsum
+                    <span>blueird ● 26 july 10:40</span>
+                </p>
+            </li>
+
+            <li class="message-feedback">
+                <p class="feedback" id="feedback">
+                    Killer is typing message.
+                </p>
+            </li>
+        </ul>
+
+        <form class="message-form" id="message-form">
+            <input type="text" name="message" class="message-input" id="message-input">
+            <div class="divider"></div>
+            <button type="submit" class="send-button">
+                Send <span><i class="fa-solid fa-paper-plane"></i></span>
+            </button>
+        </form>
+    </div>
+    <h3 class="clients-total" id="clients-total">
+        Total clients: 2
+    </h3>
+
 </body>
+
 </html>
