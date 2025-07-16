@@ -19,4 +19,6 @@ app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(process.cwd(), "public", "index.html"));
 });
 
+
+
 export default app;
