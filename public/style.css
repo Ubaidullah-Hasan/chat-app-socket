@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: "Open Sans", sans-serif;
     display: flex;
     align-items: center;
@@ -16,40 +16,87 @@ body{
     background-color: #ebebeb;
 }
 
-.title{
+.title {
     margin: 20px 0;
 }
 
-.main{
+.main {
     border: 8px solid #dddddd;
     border-radius: 24px;
     overflow: hidden;
+    position: relative;
 }
 
-.name{
+.name {
     display: flex;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 700;
     padding: 8px 16px;
     color: #7e7e7e;
     background-color: #ebebeb;
 }
 
-.name>span{
-    color: #bbb;
+.name>span {
+    color: #1a1a1a;
 }
-.name>input{
-    font-size: 24px;
-    font-weight: 700;
-    color: #7e7e7e;
+
+.name>input {
+    font-size: 18px;
+    font-weight: 400;
+    color: #1a1a1a;
     flex-grow: 1;
     border: none;
     margin: 0 12px;
     outline: none;
     background-color: #ebebeb;
+    text-transform: capitalize;
 }
 
-.message-container{
+.user-name {
+    background-color: rgb(209, 209, 209);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.user-name>input {
+    width: 50%;
+    border: 1px solid #424242;
+    background-color: rgb(255, 255, 255);
+    padding: 5px 8px;
+    border-radius: 25px;
+    text-transform: capitalize;
+    margin-top: 200px;
+}
+
+.user-name>button {
+    border: 1px solid #eaeaea;
+    background-color: #2b73df;
+    color: #eaeaea;
+    font-weight: 500;
+    padding: 5px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.user-name>button :hover {
+    border: 1px solid #022862;
+    background-color: #7c8695;
+}
+
+button:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: default;
+}
+
+.message-container {
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -59,7 +106,8 @@ body{
     overflow-x: hidden;
 }
 
-.message-left, .message-right{
+.message-left,
+.message-right {
     list-style: none;
     padding: 8px 12px;
     margin: 12px;
@@ -68,7 +116,7 @@ body{
     font-size: 18px;
 }
 
-.message-left{
+.message-left {
     border-radius: 20px 20px 20px 0;
     background-color: #fff;
     align-self: flex-start;
@@ -83,14 +131,15 @@ body{
     box-shadow: -2px 2px 4px #dcdcdc;
 }
 
-.message-left > p> span, .message-right>p>span{
+.message-left>p>span,
+.message-right>p>span {
     display: block;
     font-style: italic;
     font-size: 12px;
     margin-top: 4px;
 }
 
-.feedback{
+.feedback {
     font-style: italic;
     font-size: 14px;
     padding: 0 16px 16px 16px;
@@ -98,23 +147,23 @@ body{
     text-align: center;
 }
 
-.message-form{
+.message-form {
     display: flex;
     justify-content: space-between;
     width: 400px;
 }
 
-.message-input{
+.message-input {
     flex-grow: 1;
     height: 48px;
-    outline:none;
-    border:none;
+    outline: none;
+    border: none;
     font-size: 16px;
     padding: 0px 12px;
     background-color: #fff;
 }
 
-.send-button{
+.send-button {
     height: 48px;
     font-size: 16px;
     border: none;
@@ -124,13 +173,13 @@ body{
     cursor: pointer;
 }
 
-.divider{
+.divider {
     height: 48px;
     background-color: #f6f6f6;
     width: 2px;
 }
 
-.clients-total{
+.clients-total {
     margin: 20px 0;
     color: #7e7e7e;
 }

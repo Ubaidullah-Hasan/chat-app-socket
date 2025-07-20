@@ -22,18 +22,18 @@ async function main() {
   });
 
   io.on("connection", (socket: Socket) => {
-    console.log(socket.id);
+    // console.log(socket.id);
     connectedUserOnSocket.add(socket.id);
 
     io.emit("total-clients", connectedUserOnSocket.size);
 
     socket.on("disconnect", () => {
-      console.log("Socket id disconnected:", socket.id);
+      // console.log("Socket id disconnected:", socket.id);
       connectedUserOnSocket.delete(socket.id);
       io.emit("total-clients", connectedUserOnSocket.size);
     });
-
-    socket.on("message", data => {
+ 
+    socket.on("message", (data) => {
       socket.broadcast.emit("chat-message", data)
     });
 

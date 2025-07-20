@@ -1,5 +1,3 @@
-// import moment from 'moment';
-
 const socket = io();
 
 const messageContainer = document.getElementById("message-container");
@@ -11,9 +9,14 @@ const messageInput = document.getElementById("message-input");
 let messageTone;
 
 
+window.addEventListener("click", (event) => {
+    if (!messageTone) {
+        messageTone = new Audio("/notification-sound.mp3");
+    }
+});
+
 messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    messageTone = new Audio("/notification-sound.mp3");
     sendMessage();
 })
 
@@ -37,8 +40,10 @@ function sendMessage() {
 
 
 socket.on("chat-message", (data) => {
-    messageTone.play();
     addMessageToUi(false, data)
+    if (messageTone) {
+        messageTone.play();
+    }
 })
 
 
@@ -58,7 +63,7 @@ function addMessageToUi(isOwnMessage, data) {
 
 
 function scrollToBottom() {
-    messageContainer.scrollTo("-20px", messageContainer.scrollHeight)
+    messageContainer.scrollTo("0", messageContainer.scrollHeight)
 }
 
 messageInput.addEventListener("focus", () => {
@@ -98,8 +103,30 @@ socket.on("feedback", (data) => {
     messageContainer.innerHTML += element;
 })
 
-function clearFeedback(){
+function clearFeedback() {
     document.querySelectorAll("li.message-feedback").forEach(el => {
         el.parentNode.removeChild(el);
     })
 }
+
+
+// user name
+const inputField = document.getElementById("user-name-input");
+const startButton = document.getElementById("start-chat-btn");
+const formContainer = document.getElementById("user-name");
+
+inputField.addEventListener("input", () => {
+    if (inputField.value.trim().length > 0) {
+        startButton.disabled = false;
+        nameInput.value = inputField.value;
+    } else {
+        startButton.disabled = true;
+        nameInput.value = "Anonymous";
+    }
+})
+
+formContainer.addEventListener("submit", (e) => {
+    e.preventDefault();
+    formContainer.style.display = "none";
+
+})

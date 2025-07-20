@@ -18,11 +18,17 @@
     <div class="main">
         <div class="name">
             <span><i class="fa-solid fa-user-tie"></i></span>
-            <input type="text" class="name-input" maxlength="20" id="name-input" value="Anonymous">
+            <input type="text" class="name-input" maxlength="20" id="name-input" value="Anonymous" readonly>
         </div>
 
+        <form class="user-name" id="user-name">
+            <input type="text" class="name-input" 
+            maxlength="20" id="user-name-input" placeholder="Enter Your Name">
+            <button id="start-chat-btn" type="submit" disabled>Start Chat</button>
+        </form>
+
         <ul class="message-container" id="message-container">
-            <li class="message-left">
+            <!-- <li class="message-left">
                 <p class="message">
                     Lorem ipsum
                     <span>blueird ● 26 july 10:40</span>
@@ -34,7 +40,7 @@
                     Lorem ipsum
                     <span>blueird ● 26 july 10:40</span>
                 </p>
-            </li>
+            </li> -->
 
             <!-- <li class="message-feedback">
                 <p class="feedback" id="feedback">
@@ -44,7 +50,7 @@
         </ul>
 
         <form class="message-form" id="message-form">
-            <input type="text" name="message" class="message-input" id="message-input">
+            <input type="text" name="message" class="message-input" id="message-input" placeholder="Write your message...">
             <div class="divider"></div>
             <button type="submit" class="send-button">
                 Send <span><i class="fa-solid fa-paper-plane"></i></span>

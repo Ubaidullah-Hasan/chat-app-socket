@@ -7,7 +7,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config(); // find .env in the root by default
 const config = {
     port: Number(process.env.PORT) || 3000,
-    NODE_ENV: process.env.NODE_ENV || 'development',
+    NODE_ENV: process.env.NODE_ENV || "development",
     DATABASEURL: String(process.env.DATABASEURL),
 };
 exports.default = config;
