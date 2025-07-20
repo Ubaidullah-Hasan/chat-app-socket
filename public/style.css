@@ -13,7 +13,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #ebebeb;
+    background-color: #8d8c8c;
 }
 
 .title {
@@ -25,6 +25,7 @@ body {
     border-radius: 24px;
     overflow: hidden;
     position: relative;
+    
 }
 
 .name {
@@ -182,4 +183,14 @@ button:disabled {
 .clients-total {
     margin: 20px 0;
     color: #7e7e7e;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+    .title {
+        display: none;
+    }
+    .message-container {
+    max-width: 400px;
+    height: 100%;
+}
 }
