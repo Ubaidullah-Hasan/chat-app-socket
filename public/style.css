@@ -52,6 +52,10 @@ body {
     text-transform: capitalize;
 }
 
+.mbl-client {
+    display: none;
+}
+
 .user-name {
     background-color: rgb(209, 209, 209);
     display: flex;
@@ -200,6 +204,11 @@ button:disabled {
         height: 100vh;
     }
 
+    .mbl-client {
+        display: initial;
+        color: #262626!important;
+        font-weight: 500;
+    }
 
     .message-container {
         width: 100%;

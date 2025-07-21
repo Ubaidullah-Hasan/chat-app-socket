@@ -25,7 +25,7 @@ async function main() {
     // console.log(socket.id);
     connectedUserOnSocket.add(socket.id);
 
-    io.emit("total-clients", connectedUserOnSocket.size);
+    io.emit("total-clients", connectedUserOnSocket.size-1);
 
     socket.on("disconnect", () => {
       // console.log("Socket id disconnected:", socket.id);

@@ -2,6 +2,7 @@ const socket = io();
 
 const messageContainer = document.getElementById("message-container");
 const clientsTotal = document.getElementById("clients-total");
+const mblClientsTotal = document.getElementById("mbl-client");
 const nameInput = document.getElementById("name-input");
 const messageForm = document.getElementById("message-form");
 const messageInput = document.getElementById("message-input");
@@ -22,6 +23,7 @@ messageForm.addEventListener("submit", (e) => {
 
 socket.on("total-clients", (data) => {
     clientsTotal.innerText = `Total clients : ${data}`;
+    mblClientsTotal.innerText = data;
 })
 
 
@@ -128,5 +130,4 @@ inputField.addEventListener("input", () => {
 formContainer.addEventListener("submit", (e) => {
     e.preventDefault();
     formContainer.style.display = "none";
-
 })
